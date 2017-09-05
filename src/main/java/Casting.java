@@ -17,9 +17,26 @@ public class Casting {
 		return x;
 	}
 	
+	static boolean containsPattern(char[] chars, char[] pattern) {
+		String pat = new String(pattern);
+		String st = new String(chars);
+		return pat.contains(st);
+	}
+	static long convertBinaryToDecimal(String binaryNumber) {
+	    double x=0;
+	    for(int i=0;i<binaryNumber.length();i++){
+	        if(binaryNumber.charAt(i)== '1'){
+	         x=x+ Math.pow(2,binaryNumber.length()-1-i);
+	     }
+
+	    }
+	    return (int) x;
+	}
+	
 	public static void main(String[] args) {
 	printChars();
 	System.out.println(stringToInt("445"));
-		
+	System.out.println(containsPattern(new char[] {'a','b','c'},new char[] {'a','b','c'}));
+	System.out.println(convertBinaryToDecimal("1010"));	
 	}
 }
